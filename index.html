@@ -15,11 +15,11 @@
     <div class="container">
       <header>
         <h1>CSS nos biomas brasileiros</h1>
-        <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</h3>
+        <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</h4>
       </header>
       <div class="content">
-        <button id="start_now" onclick="closed_nivels()">start now</button>
-        <button id="about-us">about us</button>
+        <button id="start_now" class="square" onclick="closed_nivels()">start now</button>
+        <button id="about-us" class="square">about us</button>
       </div>
     </div>
   </main>
@@ -28,19 +28,48 @@
     <div class="container">
       <a onclick="open_nivels()">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M11.8516 8.59375L16.7378 3.70752C17.3374 3.10791 17.3374 2.13574 16.7378 1.53564L15.6519 0.449707C15.0522 -0.149902 14.0801 -0.149902 13.48 0.449707L8.59375 5.33594L3.70752 0.449707C3.10791 -0.149902 2.13574 -0.149902 1.53564 0.449707L0.449707 1.53564C-0.149902 2.13525 -0.149902 3.10742 0.449707 3.70752L5.33594 8.59375L0.449707 13.48C-0.149902 14.0796 -0.149902 15.0518 0.449707 15.6519L1.53564 16.7378C2.13525 17.3374 3.10791 17.3374 3.70752 16.7378L8.59375 11.8516L13.48 16.7378C14.0796 17.3374 15.0522 17.3374 15.6519 16.7378L16.7378 15.6519C17.3374 15.0522 17.3374 14.0801 16.7378 13.48L11.8516 8.59375Z" fill="black"/>
+        <path d="M11.8516 8.59375L16.7378 3.70752C17.3374 3.10791 17.3374 2.13574 16.7378 1.53564L15.6519 0.449707C15.0522 -0.149902 14.0801 -0.149902 13.48 0.449707L8.59375 5.33594L3.70752 0.449707C3.10791 -0.149902 2.13574 -0.149902 1.53564 0.449707L0.449707 1.53564C-0.149902 2.13525 -0.149902 3.10742 0.449707 3.70752L5.33594 8.59375L0.449707 13.48C-0.149902 14.0796 -0.149902 15.0518 0.449707 15.6519L1.53564 16.7378C2.13525 17.3374 3.10791 17.3374 3.70752 16.7378L8.59375 11.8516L13.48 16.7378C14.0796 17.3374 15.0522 17.3374 15.6519 16.7378L16.7378 15.6519C17.3374 15.0522 17.3374 14.0801 16.7378 13.48L11.8516 8.59375Z" fill="white"/>
         </svg>
       </a>
       <div class="content">
         <div class="col-a">
           <h2>Lorem Ipsum is simply</h2>
-          <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
-          <img src="img/tuiuiu.png" alt="tuiuiu na frente de circulos das cores da bandeira brasileira">
+          <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
+          <div style="width: 250px; height: 250px; background-color: aliceblue;"></div>
         </div>
         <div class="col-b">
-          <div class="card1 cards"></div>
-          <div class="card2 cards"></div>
-          <div class="card3 cards"></div>
+          <div id="card1" class="cards">
+            <h3>pantanal</h3>
+            <button class="cicle">jogue a aventura flex-box
+              <svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.3292 3.42317H0.585938C0.262354 3.42317 0 3.68552 0 4.0091V6.74348C0 7.06706 0.262354 7.32942 0.585938 7.32942H15.3292V9.57839C15.3292 10.6224 16.5914 11.1453 17.3297 10.4071L21.5318 6.20495C21.9895 5.74729 21.9895 5.00529 21.5318 4.54768L17.3297 0.345578C16.5915 -0.392655 15.3292 0.130197 15.3292 1.17424V3.42317Z" fill="#677415"/>
+                </svg>
+                
+            </button>
+          </div>
+          <div id="card2" class="cards blocked">
+            <img src="img/blocked.png" alt="bloqueado">
+            <div>
+              <h3>cerrado</h3>
+              <button class="cicle">jogue a aventura flex-box
+              <svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.3292 3.42317H0.585938C0.262354 3.42317 0 3.68552 0 4.0091V6.74348C0 7.06706 0.262354 7.32942 0.585938 7.32942H15.3292V9.57839C15.3292 10.6224 16.5914 11.1453 17.3297 10.4071L21.5318 6.20495C21.9895 5.74729 21.9895 5.00529 21.5318 4.54768L17.3297 0.345578C16.5915 -0.392655 15.3292 0.130197 15.3292 1.17424V3.42317Z" fill="#99710A"/>
+              </svg>
+                
+              </button>
+            </div>
+          </div>
+          <div id="card3" class="cards blocked">
+            <img src="img/blocked.png" alt="bloqueado">
+            <div>
+              <h3>amazônia</h3>
+              <button class="cicle">jogue a aventura flex-box
+              <svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.3292 3.42317H0.585938C0.262354 3.42317 0 3.68552 0 4.0091V6.74348C0 7.06706 0.262354 7.32942 0.585938 7.32942H15.3292V9.57839C15.3292 10.6224 16.5914 11.1453 17.3297 10.4071L21.5318 6.20495C21.9895 5.74729 21.9895 5.00529 21.5318 4.54768L17.3297 0.345578C16.5915 -0.392655 15.3292 0.130197 15.3292 1.17424V3.42317Z" fill="#4879A7"/>
+                </svg>
+            </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

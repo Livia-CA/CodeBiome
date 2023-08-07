@@ -21,7 +21,7 @@ html {
   margin: 0 auto;
 }
 
-button{
+button.square{
   width: 28.8rem;
   height: 6rem;
   text-transform: uppercase;
@@ -34,6 +34,27 @@ button{
   font-size: 1.8rem;
   cursor: pointer;
   border: 0.5rem solid #9A290C;
+}
+
+button.cicle{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 40rem;
+  height: 6rem;
+  text-transform: uppercase;
+  border-radius: 5rem;
+  font-weight: bold;
+  color: #677415;
+  background-color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  border: 0.5rem solid #677415;
+  padding: 2rem;
+}
+
+button.cicle: hover{
+  opacity: .5;
 }
 
 h1{
@@ -51,6 +72,12 @@ h2{
 }
 
 h3{
+  font-family: 'Dela Gothic One', cursive;
+  font-size: 2.8rem;
+  margin-bottom: 2.4rem;
+}
+
+h4{
   font-size: 1.8rem;
   color: white;
   font-weight: 400; 
@@ -125,7 +152,7 @@ html, body {
 
 #fases{
   height: 100vh;
-  background-color: #F5F5F5;
+  background-color: #030404;
   weight: 100%;
   position: relative;
   transition: all 300ms ease-out;
@@ -133,6 +160,10 @@ html, body {
 
 #fases .container{
   position: relative;
+}
+
+#fases h2{
+  color: #fff;
 }
 
 #fases a{
@@ -157,8 +188,9 @@ html, body {
   justify-content: space-between;
 }
 
-#fases h3{
+#fases h4{
   color: #646161;
+  font-size: 1.8rem;
 }
 
 #fases .col-a{
@@ -166,17 +198,76 @@ html, body {
 }
 
 #fases .col-b{
-  max-width: 50%;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-  height: 300px;
-  overflow-y: scroll;
+  height: 70%;
+  overflow: auto;
 }
 
 .cards{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 20.3rem;
-  width: 57.6rem;
-  background-color: red;
+  width: 57rem;
   border-radius: 1.5rem;
+  padding: 4rem;
 }
+
+#fases .col-b::-webkit-scrollbar {
+  width: 0px;
+}
+
+.cards h3{
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 3.5rem;
+}
+
+#card1{
+  background-image: url('img/card1.png');
+}
+
+#card2{
+  background-image: url('img/card2.png');
+}
+
+#card2 button.cicle{
+  color: #99710A;
+  border-color: #99710A;
+}
+
+button.cicle:hover{
+  opacity:0.8;
+  transition: all 600ms ease-out;
+}
+
+#card3{
+  background-image: url('img/card3.png');
+}
+
+#card3 button.cicle{
+  color: #4879A7;
+  border-color: #4879A7;
+}
+
+.blocked{
+  filter: saturate(0);
+}
+
+.blocked div{
+  filter: blur(3px);
+}
+
+.blocked button{
+  cursor: default;
+}
+
+.blocked img{
+  position: absolute;
+  z-index: 1;
+  top: 15%;
+  left: 36%
+}
+
