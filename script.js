@@ -8,12 +8,12 @@ element.addEventListener("mouseout", () => {
     document.getElementById("home").className="imagem1";
 });
 
-function closed_nivels(){
-    document.getElementById("fases").className="open";
+function open_page(id){
+    document.getElementById(id).className="open";
 }
 
-function open_nivels(){
-    document.getElementById("fases").className="closed";
+function close_page(id){
+    document.getElementById(id).className="closed";
 }
 
 function close_modal(id){
