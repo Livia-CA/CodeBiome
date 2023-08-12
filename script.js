@@ -23,3 +23,12 @@ function close_modal(id){
 function open_modal(id){
     document.getElementById(id).className="visible";
 }
+
+function teste(){
+    document.getElementById("loading").className="visible";
+
+    setTimeout(() => {
+        document.getElementById("loading").className="invisible";
+    }, "3000");
+
+}
