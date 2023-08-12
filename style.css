@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Nunito:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=JetBrains+Mono&family=Nunito:wght@400;800&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Nunito', sans-serif;
+  color: white;
 }
 
 :root {
@@ -87,6 +88,16 @@ h4{
 
 html, body {
   overflow: hidden;
+ }
+
+ .invisible{
+  display: none;
+  opacity: 0;
+ }
+
+ .visible{
+  display: block;
+  opacity: 1;
  }
 
 /*========== HOME ==========*/
@@ -202,9 +213,8 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-  max-height: 70%;
+  max-height: 70vh;
   overflow: auto;
-  justify-content: center;
 }
 
 .cards{
@@ -274,119 +284,6 @@ html, body {
   left: 36%
 }
 
-<<<<<<< HEAD
-/*========== FASE PANTANAL ==========*/
-
-.tela-pantanal{
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  background-image: url(img/pantanalfundo.png); 
-  background-size: cover;
-  background-repeat: no-repeat;
-  top: 0;
-  display: flex;
-}
-
-.cover{
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.tela-pantanal .title{
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  color: #FFF;
-  font-family: 'Dela Gothic One';
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  display: flex;
-  width: 260px;
-  height: 49px;
-  flex-direction: column;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.tela-pantanal .subtitle{
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  margin-top: 4rem;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  color: #677415;
-  font-family: Nunito;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-  text-transform: uppercase;
-  justify-content: center;
-}
-
-.tela-pantanal .descric{
-  position: relative;
-  z-index: 2; 
-  top: 32%;
-  font-family: 'Nunito', sans-serif;
-  font-size: 18px;
-  font-weight: 40rem;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 38vh;
-  margin-left: 16rem;
-  margin-right: 16rem;
-}
-
-.tela-pantanal .descric .d1{
-  margin-bottom: 3rem;
-}
-
-.tela-pantanal .botao{
-  justify-content: center;
-  display: flex;
-  align-items: flex-end;
-  margin-right: 30rem;
-  z-index: 4;
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.tela-pantanal .botao button{
-  z-index: 4;
-  position: relative;
-  background: linear-gradient(
-    to right,
-    #000 50%,
-    #9A290C 50%
-  );
-  background-size: 200% 100%;
-  background-position: right bottom;
-  transition: all 400ms ease-out;
-}
-
-.tela-pantanal .botao button:hover{
-  z-index: 4;
-  position: relative;
-  background-color: #000;
-  background-position: left bottom;
-=======
 .unblock img{
   display: none;
 }
@@ -407,5 +304,236 @@ html, body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
->>>>>>> 67968f1b0d7f4a6d6e8797bb2eb69ef5c9e197b8
+}
+
+.editor_code{
+  background-color: #282C34;
+  width: 50rem;
+  display: flex;
+  align-items: flex-start;
+  padding: 1.2rem 0 1.8rem;
+  border-radius: 0.5rem;
+}
+
+.editor_code_numbers{
+  margin-top: 1.1rem;
+  padding: 0 2rem;
+  text-align: right;
+}
+
+.code_number{
+  color: #707a84;
+  line-height: 1.5;
+  font-size: 2.4rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.code{
+  margin-top: 1.1rem;
+  margin-right: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.code_code{
+  line-height: 1.5;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.code_code span{
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.code button{
+  align-self: flex-end;
+  align-content: end;
+  margin: 0;
+  width: 19rem;
+}
+
+code{
+  font-size: 2.4rem;
+  color: #fff;
+  letter-spacing: 0.1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.code input{
+  line-height: 1.3;
+  background-color: #646161;
+  color: #E0E0E0;
+  font-family: 'JetBrains Mono', monospace;
+  border: none;
+  font-size: 2.4rem;
+}
+
+.tab{
+  margin-left: 3rem;
+}
+
+.code_blue{
+  color: #647AEF;
+}
+
+.code_green{
+  color: #61D357;
+}
+
+#jogo .container{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  gap: 8rem;
+}
+
+#jogo .col-a{
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  gap: 2.4rem;
+}
+
+#jogo h3{
+  margin: 0;
+}
+
+#jogo a{
+  padding: 0;
+  margin: 0;
+}
+
+#jogo .level{
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+#jogo .level a{
+  height: 1.6rem;
+}
+
+
+#jogo .level_text{
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  font-size: 1.8rem;
+}
+
+#jogo .level_text a{
+  font-size: 2.4rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#jogo .col-b{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+#jogo .col-b .campo{
+  height: 50rem;
+  width: 50rem;
+  background-color: #646161;
+  display: flex;
+  border-radius: 0.5rem;
+}
+
+
+/*///////////////sobre*/
+
+#sobre{
+  animation: fade-in .5s;
+}
+
+#sobre .container{
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+
+#sobre .content{
+  background-color: #FFFCF8;
+  padding: 5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  gap: 4.5rem;
+  width: 112rem;
+  justify-content: center;
+  position: relative;
+}
+
+#sobre .content p{
+  color: #646161;
+  line-height: 1.6rem;
+  margin-bottom: 1.3rem;
+  font-size: 1.2rem;
+}
+
+#sobre .content a{
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+}
+
+#sobre h2{
+  font-size: 2.4rem;
+  color: #000;
+  margin-bottom: 3.5rem;
+}
+
+#desenvolvedores{
+  display: flex;
+  gap: 2.4rem;
+  border-right: solid .3rem #646161;
+  padding: 3rem 4.5rem 3rem 0;
+}
+
+.membro{
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+  max-width: 14rem;
+}
+
+.foto{
+  width: 10rem;
+  height: 10rem;
+  background-color: #D9D9D9;
+  border-radius: 50%;
+}
+
+#sobre .content .nome{
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  color: #000;
+  font-weight: 600;
+}
+
+.descricao{
+  text-align: center;
+}
+
+#sobre .col-b{
+  max-width: 40rem;
+}
+
+@keyframes fade-in{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }
