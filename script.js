@@ -35,7 +35,8 @@ function loading(){
 }
 
 var nivel_atual = 1;
-var nivel_desbloc = 3;
+var nivel_desbloc = 1;
+atualiza_mudar_nivel();
 
 function atualiza_mudar_nivel(){
     if(nivel_atual == nivel_desbloc){
@@ -77,8 +78,9 @@ function mudarnivel(element){
     atualiza_mudar_nivel();
 }
 
+var resp_user;
+
 document.addEventListener("keydown", (event)=>{
-    var resp_user;
     var nivel;
     if(document.getElementById('jogo').className == "visible"){
         if(event.key === ";"){
@@ -108,15 +110,23 @@ function atualizaCSS(texto, nivel){
         case "justify-content:flex-end":
             document.getElementById(`campo_nivel${nivel}`).style.justifyContent = "flex-end";
             break;
+        case "justify-content:flex-start":
+            document.getElementById(`campo_nivel${nivel}`).style.justifyContent = "flex-start";
+            break;
 
         case "justify-content:space-between":
             campo.style.justifyContent = "space-between";
             break;
+    }
+}
 
-        default:
-            alert("deu certo não, tenta ai novamente");
-            alert(texto);
-            break;
+function verifica(resposta){
+    if(resposta == resp_user){
+        alert("acertouuu");
+        if(nivel_atual == nivel_desbloc){
+            nivel_desbloc++;
+            atualiza_mudar_nivel();
+        }
     }
 }
 
