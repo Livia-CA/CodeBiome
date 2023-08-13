@@ -414,6 +414,11 @@ code{
   gap: 1.8rem;
 }
 
+#jogo .level .block{
+  pointer-events: none;
+  opacity: .5;
+}
+
 #jogo .level a{
   height: 1.6rem;
 }
@@ -442,9 +447,37 @@ code{
 #jogo .col-b .campo{
   height: 50rem;
   width: 50rem;
-  background-color: #646161;
+  background-color: green;
   display: flex;
   border-radius: 0.5rem;
+}
+
+#jogo .col-b .campo .fixo{
+  position: fixed;
+  height: 50rem;
+  width: 50rem;
+}
+
+#jogo .col-b .campo .fixo img{
+  width: 15rem;
+  margin: 2rem;
+}
+
+#jogo .col-b .campo .movel{
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+#jogo .col-b .campo .movel img{
+  height: 15rem;
+  margin: 2rem; 
+}
+
+#campo_nivel1{
+  justify-content: flex-end;
 }
 
 
@@ -611,6 +644,114 @@ code{
   color: #000;
   font-size: 1.8rem;
 }
+
+
+/*///instruções//*/
+
+.instrucoes{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(.5rem);
+  z-index: 3;
+  animation: fade-in .5s;
+}
+
+.instrucoes .content{
+  background-color: #FFFCF8;
+  padding: 5rem;
+  border-radius: 0.5rem;
+  width: 100rem;
+  height: 45rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.instrucoes .content a{
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+}
+
+.instrucoes .titulo{
+  display: flex;
+}
+
+.instrucoes .titulo .linha{
+  border-left: solid 0.5rem #000;
+}
+
+#hist1, #expl1{
+  width: 100%;
+  height: 100%;
+}
+
+.instrucoes .historia{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.instrucoes .historia p{
+  color: #646161;
+  font-size: 1.8rem;
+}
+
+#jogo .instrucoes .historia .col-b{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.instrucoes .image{
+  background-color: #646161;
+  width: 80%;
+  height: 15rem;
+}
+
+.instrucoes .historia button{
+  align-self: flex-end;
+}
+
+.instrucoes button{
+  margin: 0;
+}
+
+.instrucoes .titulo h2{
+  font-size: 2.4rem;
+  font-family: nunito;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 3rem;
+  margin-bottom: 0;
+  opacity: 0.5;
+}
+
+.instrucoes .titulo h2.active{
+  opacity: 1;
+  border-bottom: solid .5rem #9A290C;
+}
+
+#campo_nivel1{
+
+}
+
+.instrucoes .explicacao{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
 
 
 @keyframes fade-in{
