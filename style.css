@@ -552,7 +552,7 @@ code{
 .foto{
   width: 10rem;
   height: 10rem;
-  background-color: #D9D9D9;
+  /*background-color: #D9D9D9;*/
   border-radius: 50%;
 }
 
