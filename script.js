@@ -38,6 +38,7 @@ var nivel_atual = 1;
 var nivel_desbloc = 1;
 atualiza_mudar_nivel();
 
+
 function atualiza_mudar_nivel(){
     if(nivel_atual == nivel_desbloc){
         var elements = document.getElementsByClassName("level_seg");
@@ -76,6 +77,14 @@ function mudarnivel(element){
     }
     open_modal(`nivel${nivel_atual}`)
     atualiza_mudar_nivel();
+}
+
+function proxnivel(){
+    close_modal(`nivel${nivel_atual}`);
+    nivel_atual++;
+    open_modal(`nivel${nivel_atual}`)
+    atualiza_mudar_nivel();
+    close_modal('sucess');
 }
 
 var resp_user;
@@ -117,12 +126,22 @@ function atualizaCSS(texto, nivel){
         case "justify-content:space-between":
             campo.style.justifyContent = "space-between";
             break;
+        case "justify-content:center":
+            document.getElementById(`campo_nivel${nivel}`).style.justifyContent = "center";
+            break;
+        case "justify-content:space-around":
+            document.getElementById(`campo_nivel${nivel}`).style.justifyContent = "space-around";
+            break;
+        case "justify-content:space-evenly":
+            document.getElementById(`campo_nivel${nivel}`).style.justifyContent = "space-evenly";
+            break;
     }
 }
 
 function verifica(resposta){
     if(resposta == resp_user){
-        alert("acertouuu");
+        document.getElementById("titulo_sucess").textContent = `Parabéns você concluiu o nível ${nivel_atual}!!`;
+        open_modal('sucess');
         if(nivel_atual == nivel_desbloc){
             nivel_desbloc++;
             atualiza_mudar_nivel();

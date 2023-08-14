@@ -447,7 +447,10 @@ code{
 #jogo .col-b .campo{
   height: 50rem;
   width: 50rem;
-  background-color: green;
+  background-image: url("img/Cenario2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   display: flex;
   border-radius: 0.5rem;
 }
@@ -461,6 +464,7 @@ code{
 #jogo .col-b .campo .fixo img{
   width: 15rem;
   margin: 2rem;
+  filter: drop-shadow(-5px 5px 5px #222);
 }
 
 #jogo .col-b .campo .movel{
@@ -474,6 +478,7 @@ code{
 #jogo .col-b .campo .movel img{
   height: 15rem;
   margin: 2rem; 
+  filter: drop-shadow(-5px 5px 5px #222);
 }
 
 #campo_nivel1{
@@ -705,16 +710,18 @@ code{
   font-size: 1.8rem;
 }
 
+.instrucoes .historia b{
+  color: #646161;
+}
+
 #jogo .instrucoes .historia .col-b{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.instrucoes .image{
-  background-color: #646161;
-  width: 80%;
-  height: 15rem;
+.instrucoes img{
+  width: 20rem;
 }
 
 .instrucoes .historia button{
@@ -740,10 +747,6 @@ code{
   border-bottom: solid .5rem #9A290C;
 }
 
-#campo_nivel1{
-
-}
-
 .instrucoes .explicacao{
   width: 100%;
   height: 100%;
@@ -752,7 +755,52 @@ code{
   justify-content: flex-end;
 }
 
+/*sucess*/
+#sucess .cont{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 3;
+  animation: fade-in .5s;
+}
 
+#sucess .content{
+  background-color: #FFFCF8;
+  padding: 5rem;
+  border-radius: 0.5rem;
+  width: 35rem;
+  height: 35rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#sucess .content h3{
+  font-family: nunito;
+  color: #000;
+  font-size: 2.4rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+#sucess .content button{
+  margin: 0;
+  width: 20rem;
+}
+
+#sucess .content a{
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+}
 
 @keyframes fade-in{
   from{

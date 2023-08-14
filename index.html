@@ -168,9 +168,9 @@
           </div>
     
           <div class="level_text">
-            <p>Olha lá, Blue está preso...Temos que ajuda-lo a sair daquela gaiola! Meu grande amigo Blue... O Pássaro azul.</p>
+            <p>Olha lá, Tuca está preso...Temos que ajuda-lo a sair daquela gaiola! Meu grande amigo Tuca...</p>
               
-            <p>Objetivo: Ajude Blue a sair da gaiola. Use os comandos de Flex-Box para Ronaldo salvar Blue.</p>
+            <p>Objetivo: Ajude Jorge a salvar o Tucano, precisamos solta-lo do cativeiro. Use as táticas CSS Flex-Box para salva-lo..</p>
     
             <a onclick="open_modal('instrucao1')">abrir instruções</a>
           </div>
@@ -204,13 +204,13 @@
             </div>
 
             <div class="fixo">
-              <img src="img/Arara-Azul.gif" alt="">
+              <img src="img/Tucano.gif" alt="">
             </div>
           </div>
         </div>
       </div>
 
-      <div id="instrucao1">
+      <div id="instrucao1" class="invisible">
         <div class="instrucoes">
           <div class="content">
             <a onclick="close_modal('instrucao1')">
@@ -227,10 +227,12 @@
             <div id="hist1">
               <div class="historia">
                 <div class="col-a">
-                  <p>Lorem Ipsum is simply dummy text of the has been the industry's standard.Lorem Ipsum is simply dummy text of the has been the industry's standard.Lorem Ipsum is simply dummy text of the has been the industry's standard.Lorem Ipsum is simply dummy text of the has been the industry's standard.</p>
+                  <p>                    Em um dia ensolarado, o experiente tucano Tuca, que estava se alimentando de um saboroso mamão, é surpreendido por um caçador. O caçador coloca Tuca em uma gaiola super apertada.</p> 
+                  <p>Ainda bem que Jorge viu toda a cena. Devido à beleza, o bico do tucano é comercializado clandestinamente.</p>
+                  <p>O tucano é uma ave que se encontra no pantanal, que mais é vítima de ações antrópicas.</p>
                 </div>
                 <div class="col-b">
-                  <div class="image"></div>
+                  <img src="img/Tucano.gif" alt="">
                   <button onclick="mudar_instrucao()" class="square">próximo</button>
                 </div>
               </div>
@@ -370,6 +372,21 @@
           <div class="campo">
             <div style="width: 50px; height: 50px; background-color: blue;"></div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="sucess" class="invisible">
+      <div class="cont">
+        <div class="content">
+          <a onclick="close_modal('sucess')">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.8516 8.59375L16.7378 3.70752C17.3374 3.10791 17.3374 2.13574 16.7378 1.53564L15.6519 0.449707C15.0522 -0.149902 14.0801 -0.149902 13.48 0.449707L8.59375 5.33594L3.70752 0.449707C3.10791 -0.149902 2.13574 -0.149902 1.53564 0.449707L0.449707 1.53564C-0.149902 2.13525 -0.149902 3.10742 0.449707 3.70752L5.33594 8.59375L0.449707 13.48C-0.149902 14.0796 -0.149902 15.0518 0.449707 15.6519L1.53564 16.7378C2.13525 17.3374 3.10791 17.3374 3.70752 16.7378L8.59375 11.8516L13.48 16.7378C14.0796 17.3374 15.0522 17.3374 15.6519 16.7378L16.7378 15.6519C17.3374 15.0522 17.3374 14.0801 16.7378 13.48L11.8516 8.59375Z" fill="black"/>
+            </svg>
+          </a>
+          <img src="" alt="">
+          <h3 id="titulo_sucess"></h3>
+          <button onclick="proxnivel()" class="square">proxima fase</button>
         </div>
       </div>
     </div>
