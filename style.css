@@ -447,12 +447,19 @@ code{
 #jogo .col-b .campo{
   height: 50rem;
   width: 50rem;
-  background-image: url("img/Cenario2.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
   border-radius: 0.5rem;
+}
+
+.campo1{
+  background-image: url("img/Cenario.png");
+}
+
+.campo2{
+  background-image: url("img/Cenario2.png");
 }
 
 #jogo .col-b .campo .fixo{
@@ -483,6 +490,10 @@ code{
 
 #campo_nivel1{
   justify-content: flex-end;
+}
+
+#campo_nivel2{
+  align-items: flex-end;
 }
 
 
@@ -720,12 +731,39 @@ code{
   justify-content: space-between;
 }
 
-.instrucoes img{
-  width: 20rem;
+#jogo .instrucoes .historia .col-a{
+  max-height: 30rem;
+  overflow: auto;
+  padding: 1rem;
+  direction: rtl;
 }
 
-.instrucoes .historia button{
-  align-self: flex-end;
+#jogo .instrucoes .historia .col-a p{
+  direction: initial;
+}
+
+#jogo .instrucoes .historia .col-a::-webkit-scrollbar {
+  width: 5px;
+}
+
+#jogo .instrucoes .historia .col-a::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#jogo .instrucoes .historia .col-a::-webkit-scrollbar-thumb {
+  background-color: #9A290C;
+  border-radius: .5rem;
+}
+
+.instrucoes img{
+  width: 20rem;
+  filter: drop-shadow(3px 3px 5px #222);
+}
+
+.instrucoes button{
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
 }
 
 .instrucoes button{

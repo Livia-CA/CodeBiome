@@ -76,8 +76,9 @@
       </a>
       <div class="content">
         <div class="col-a">
-          <h2>Lorem Ipsum is simply</h2>
-          <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
+          <h2>Inicie sua aventura aqui</h2>
+          <h4>Ajude os animais a retornarem ao seu bioma de origem usando comandos CSS.
+          </h4>
           <img src="img/animais.png" alt="ilustração de um tuiuiu, uma arara azul e um tucano">
         </div>
         <div class="col-b">
@@ -201,13 +202,13 @@
         </div>
 
         <div class="col-b">
-          <div class="campo">
+          <div class="campo campo2">
             <div id="campo_nivel1" class="movel">
               <img src="img/Humano.gif" alt="">
             </div>
 
             <div class="fixo">
-              <img src="img/Tucano.gif" alt="">
+              <img src="img/Tucano-Engaiolado.gif" alt="">
             </div>
           </div>
         </div>
@@ -278,6 +279,116 @@
           </div>
     
           <div class="level_text">
+            <p>Após Jorge realizar os devidos procedimentos e salvar o tuiuiú, é hora de solta-lo da gaiola, utilizando os comandos de CSS Flex-Box...</p>
+              
+            <p>Objetivo: Ajude Jorge a soltar o Tuiuiu, leve-o até a gaiola de Túlio. Use as táticas CSS Flex-Box para liberta-lo..</p>
+    
+            <a onclick="open_modal('instrucao2')">abrir instruções</a>
+          </div>
+          <div class="editor_code">
+            <div class="editor_code_numbers">
+              <div class="code_number">1</div>
+              <div class="code_number">2</div>
+              <div class="code_number">3</div>
+              <div class="code_number">4</div>
+              <div class="code_number">5</div>
+            </div>
+    
+            <div class="code">
+              <code>
+                <div class="code_code"><span class="code_blue">#field</span> {</div>
+                <div class="code_code"><span class="code_green tab">display</span> : flex;</div>
+              </code>
+              <input id="resp_nivel2" placeholder="Digite sua resposta aqui..." type="text" class="code_input tab">
+              <code>
+                <div class="code_code">{</div>
+              </code>
+              <button onclick="verifica('align-items:flex-start')" class="square">enviar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-b">
+          <div class="campo campo1">
+            <div id="campo_nivel2" class="movel">
+              <img src="img/Humano.gif" alt="">
+            </div>
+
+            <div class="fixo">
+              <img src="img/Tuiuiu.gif" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="instrucao2" class="visible">
+        <div class="instrucoes">
+          <div class="content">
+            <a onclick="close_modal('instrucao2')">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.8516 8.59375L16.7378 3.70752C17.3374 3.10791 17.3374 2.13574 16.7378 1.53564L15.6519 0.449707C15.0522 -0.149902 14.0801 -0.149902 13.48 0.449707L8.59375 5.33594L3.70752 0.449707C3.10791 -0.149902 2.13574 -0.149902 1.53564 0.449707L0.449707 1.53564C-0.149902 2.13525 -0.149902 3.10742 0.449707 3.70752L5.33594 8.59375L0.449707 13.48C-0.149902 14.0796 -0.149902 15.0518 0.449707 15.6519L1.53564 16.7378C2.13525 17.3374 3.10791 17.3374 3.70752 16.7378L8.59375 11.8516L13.48 16.7378C14.0796 17.3374 15.0522 17.3374 15.6519 16.7378L16.7378 15.6519C17.3374 15.0522 17.3374 14.0801 16.7378 13.48L11.8516 8.59375Z" fill="black"/>
+              </svg>
+            </a>
+            <div class="titulo">
+              <h2 id="t_hist2"
+              class="active">história</h2>
+              <div class="linha"></div>
+              <h2 id="t_flex2">flex-box</h2>
+            </div>
+            <div id="hist2">
+              <div class="historia">
+                <div class="col-a">
+                  <p> Depois de passar o dia comendo muçum, um dos seus principais alimetos, o jovem Túlio, o Tuiuiú, decidiu se aventurar em uma lagoa próxima a uma fazenda.</p> 
+                  <p>Ao chegar na lagoa, viu que a mesma estava completamente suja, com lixo residencial, mobilia antiga, garrafas e objetos abandonados.</p>
+                  <p>O problema mesmo, ocorreu quando Túlio avistou algo próximo a superfície da lagoa, e ao se aproximar, acabou ficando preso em uma linha descartada indevidamente.</p>
+                  <p>Jorge, ao avistar o tuiuiú próximo a sua fazenda, se debatendo, se aproxima para salva-lo.</p>
+                  <p>A falta de saneamento básico e o desmatamento das matas ciliares, assim como o despejo de lixo em locais incorretos, são os principais responsáveis pela poluição dos rios do pantanal.</p>
+                  
+                </div>
+                <div class="col-b">
+                  <img src="img/Tuiuiu.gif" alt="">
+                  <button onclick="mudar_instrucao()" class="square">próximo</button>
+                </div>
+              </div>
+            </div>
+            <div id="expl2" class="invisible">
+              <div class="explicacao">
+                <button onclick="mudar_instrucao()" class="square">anterior</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+    </div>
+
+    <!--<div id="nivel2" class="invisible">
+      <div class="container">
+        <div class="col-a">
+          <a onclick="close_modal('jogo')">
+            <svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.54585 7.32952L21.2891 7.32952C21.6126 7.32952 21.875 7.06717 21.875 6.74358L21.875 4.00921C21.875 3.68562 21.6126 3.42327 21.2891 3.42327L6.54585 3.42327L6.54585 1.1743C6.54585 0.130253 5.28359 -0.392599 4.54531 0.345634L0.34321 4.54773C-0.114455 5.0054 -0.114455 5.74739 0.34321 6.20501L4.54531 10.4071C5.28354 11.1453 6.54585 10.6225 6.54585 9.57845L6.54585 7.32952Z" fill="white"/>
+              </svg>
+          </a>
+          
+          <div class="level">
+            <a onclick="mudarnivel(this)" class="level_ant">
+              <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.71863 6.98486L16.3593 0.344238C16.8182 -0.114746 17.5604 -0.114746 18.0145 0.344238L19.118 1.44775C19.577 1.90674 19.577 2.64893 19.118 3.10303L14.4159 7.81494L19.1229 12.522C19.5819 12.981 19.5819 13.7231 19.1229 14.1772L18.0194 15.2856C17.5604 15.7446 16.8182 15.7446 16.3641 15.2856L9.72351 8.64502C9.25965 8.18604 9.25965 7.44385 9.71863 6.98486ZM0.34363 8.64502L6.98426 15.2856C7.44324 15.7446 8.18543 15.7446 8.63953 15.2856L9.74304 14.1821C10.202 13.7231 10.202 12.981 9.74304 12.5269L5.0409 7.81494L9.74793 3.10791C10.2069 2.64893 10.2069 1.90674 9.74793 1.45264L8.64441 0.344238C8.18543 -0.114746 7.44324 -0.114746 6.98914 0.344238L0.348513 6.98486C-0.115354 7.44385 -0.115354 8.18604 0.34363 8.64502Z" fill="white"/>
+              </svg>
+            </a>
+            
+            <h3>level 2</h3>
+            
+            <a onclick="mudarnivel(this)" class="level_seg">
+              <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.2814 8.64502L3.64074 15.2856C3.18176 15.7446 2.43957 15.7446 1.98547 15.2856L0.881955 14.1821C0.42297 13.7231 0.42297 12.981 0.881955 12.5269L5.5841 7.81494L0.877073 3.10791C0.418089 2.64893 0.418089 1.90674 0.877073 1.45264L1.98059 0.344239C2.43957 -0.114745 3.18176 -0.114745 3.63586 0.344239L10.2765 6.98486C10.7404 7.44385 10.7404 8.18604 10.2814 8.64502ZM19.6564 6.98486L13.0157 0.344239C12.5568 -0.114745 11.8146 -0.114745 11.3605 0.344239L10.257 1.44775C9.79797 1.90674 9.79797 2.64893 10.257 3.10303L14.9591 7.81494L10.2521 12.522C9.79309 12.981 9.79309 13.7231 10.2521 14.1772L11.3556 15.2856C11.8146 15.7446 12.5568 15.7446 13.0109 15.2856L19.6515 8.64502C20.1154 8.18604 20.1154 7.44385 19.6564 6.98486Z" fill="white"/>
+              </svg> 
+            </a>
+            
+          </div>
+    
+          <div class="level_text">
             <p>Olha lá, Blue está preso...Temos que ajuda-lo a sair daquela gaiola! Meu grande amigo Blue... O Pássaro azul.</p>
               
             <p>Objetivo: Ajude Blue a sair da gaiola. Use os comandos de Flex-Box para Ronaldo salvar Blue.</p>
@@ -313,7 +424,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
 
     <div id="nivel3" class="invisible">
       <div class="container">
