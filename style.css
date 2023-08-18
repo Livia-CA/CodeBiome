@@ -1,5 +1,7 @@
+/* Import de fontes */
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=JetBrains+Mono&family=Nunito:wght@400;800&display=swap');
 
+/* Estilos gerais */
 * {
   margin: 0;
   padding: 0;
@@ -16,9 +18,12 @@ html {
   scroll-behavior: smooth;
 }
 
-a{
+a {
   cursor: pointer;
 }
+
+/* Contêiner */
+
 
 .container{
   max-width: max(1180px, 52%);
@@ -26,18 +31,22 @@ a{
   margin: 0 auto;
 }
 
-button.square{
-  width: 28.8rem;
+/* Botões */
+
+button.square,
+button.cicle{
   height: 6rem;
   text-transform: uppercase;
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+button.square{
+  width: 28.8rem;
   border-radius: 0.5rem;
   margin-bottom: 2.4rem;
-  font-weight: bold;
-  color: white;
   background-color: #9A290C;
-  border: none;
-  font-size: 1.8rem;
-  cursor: pointer;
   border: 0.5rem solid #9A290C;
 }
 
@@ -46,46 +55,38 @@ button.cicle{
   justify-content: space-around;
   align-items: center;
   width: 40rem;
-  height: 6rem;
-  text-transform: uppercase;
   border-radius: 5rem;
-  font-weight: bold;
   color: #677415;
   background-color: #fff;
-  font-size: 1.8rem;
-  cursor: pointer;
   border: 0.5rem solid #677415;
   padding: 2rem;
   opacity: 0.95;
 }
 
-
-h1{
+/* Títulos */
+h1,
+h2,
+h3{
   font-family: 'Dela Gothic One', cursive;
-  font-size: 4.8rem;
-  color: white;
   margin-bottom: 2.4rem;
   font-weight: 100;
+}
+
+h1{
+  font-size: 4.8rem;
 }
 
 h2{
-  font-family: 'Dela Gothic One', cursive;
   font-size: 3.6rem;
   color: black;
-  margin-bottom: 2.4rem;
-  font-weight: 100;
 }
 
 h3{
-  font-family: 'Dela Gothic One', cursive;
   font-size: 2.8rem;
-  margin-bottom: 2.4rem;
-  font-weight: 100;
 }
 
 h4{
   font-size: 1.8rem;
-  color: white;
   font-weight: 400; 
   margin-bottom: 2.4rem;
 }
@@ -221,7 +222,7 @@ html, body {
   overflow: auto;
 }
 
-.cards{
+#fases .cards{
   display:flex;
   flex-direction: column;
   justify-content: space-between;
@@ -235,64 +236,64 @@ html, body {
   width: 0px;
 }
 
-.cards h3{
+#fases .cards h3{
   color: #fff;
   text-transform: uppercase;
   margin-bottom: 3.5rem;
 }
 
-#card1{
+#fases #card1{
   background-image: url('img/card1.png');
 }
 
-#card2{
+#fases #card2{
   background-image: url('img/card2.png');
 }
 
-#card2 button.cicle{
+#fases #card2 button.cicle{
   color: #99710A;
   border-color: #99710A;
 }
 
-.unblock button.cicle:hover{
+#fases .unblock button.cicle:hover{
   opacity:1;
   transition: all 600ms;
   transform: scale(1.05);
 }
 
-#card3{
+#fases #card3{
   background-image: url('img/card3.png');
 }
 
-#card3 button.cicle{
+#fases #card3 button.cicle{
   color: #4879A7;
   border-color: #4879A7;
 }
 
-.blocked{
+#fases .blocked{
   filter: saturate(0);
 }
 
-.blocked div{
+#fases .blocked div{
   filter: blur(3px);
 }
 
-.blocked button{
+#fases .blocked button{
   cursor: default;
 }
 
-.cards img{
+#fases .cards img{
   position: absolute;
   z-index: 1;
   top: 15%;
   left: 36%
 }
 
-.unblock img{
+#fases .unblock img{
   display: none;
 }
 
-.col-a img{
+#fases .col-a img{
   margin-top: 2.4rem;
 }
 
@@ -526,6 +527,15 @@ code{
   position: relative;
 }
 
+#sobre .content .text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 80%;
+}
+
 #sobre .content p{
   color: #646161;
   line-height: 1.6rem;
@@ -757,7 +767,7 @@ code{
 
 .instrucoes img{
   width: 20rem;
-  filter: drop-shadow(3px 3px 5px #222);
+  filter: drop-shadow(-3px 3px 5px #222);
 }
 
 .instrucoes button{
@@ -846,5 +856,11 @@ code{
   }
   to{
     opacity: 1;
+  }
+}
+
+@media (max-width: 1200px){
+  body{
+    display: none;
   }
 }
