@@ -34,48 +34,27 @@ function loading(){
 
 }
 
-var nivel_atual = 1;
-var nivel_desbloc = 1;
+let nivel_atual = 1;
+let nivel_desbloc = 1;
 atualiza_mudar_nivel();
 
+function atualiza_mudar_nivel() {
+    const elementsSeg = document.getElementsByClassName("level_seg");
+    const elementsAnt = document.getElementsByClassName("level_ant");
 
-function atualiza_mudar_nivel(){
-    if(nivel_atual == nivel_desbloc){
-        var elements = document.getElementsByClassName("level_seg");
-    
-        for (var i = 0; i < elements.length; i++) {
-            elements[i].classList.add("block");
-        }
-    }else{
-        var elements = document.getElementsByClassName("level_seg");
-    
-        for (var i = 0; i < elements.length; i++) {
-            elements[i].classList.remove("block");
-        }
+    for (let i = 0; i < elementsSeg.length; i++) {
+        elementsSeg[i].classList.toggle("block", nivel_atual === nivel_desbloc);
     }
-    if(nivel_atual == 1){
-        var elements = document.getElementsByClassName("level_ant");
-    
-        for (var i = 0; i < elements.length; i++) {
-            elements[i].classList.add("block");
-        }
-    }else{
-        var elements = document.getElementsByClassName("level_ant");
-    
-        for (var i = 0; i < elements.length; i++) {
-            elements[i].classList.remove("block");
-        }
-    }    
+
+    for (let i = 0; i < elementsAnt.length; i++) {
+        elementsAnt[i].classList.toggle("block", nivel_atual === 1);
+    }
 }
 
-function mudarnivel(element){
+function mudarnivel(element) {
     close_modal(`nivel${nivel_atual}`);
-    if(element.classList.contains("level_ant")){
-        nivel_atual--;
-    }else{
-        nivel_atual++;
-    }
-    open_modal(`nivel${nivel_atual}`)
+    nivel_atual += element.classList.contains("level_ant") ? -1 : 1;
+    open_modal(`nivel${nivel_atual}`);
     atualiza_mudar_nivel();
 }
 
@@ -87,53 +66,57 @@ function proxnivel(){
     close_modal('sucess');
 }
 
-var resp_user;
+let resp_user;
 
-document.addEventListener("keydown", (event)=>{
-    var nivel;
-    if(document.getElementById('jogo').className == "visible"){
-        if(event.key === ";"){
-            if(document.getElementById('nivel1').className == "visible"){
-                resp_user = document.getElementById("resp_nivel1").value;
-                nivel = 1;
-            }
-            if(document.getElementById('nivel2').className == "visible"){
-                resp_user = document.getElementById("resp_nivel2").value;
-                nivel = 2;
-            }
-            if(document.getElementById('nivel3').className == "visible"){
-                resp_user = document.getElementById("resp_nivel3").value;
-                nivel = 3;
-            }
-    
-            resp_user = resp_user.toLowerCase();
-            resp_user = resp_user.replace(/\s/g,'');
+document.addEventListener("keydown", (event) => {
+    if (document.getElementById('jogo').className === "visible") {
+        if (event.key === ";") {
+            const nivel = nivel_atual;
+            const nivelElem = document.getElementById(`nivel${nivel}`);
+            const respElem = document.getElementById(`resp_nivel${nivel}`);
+            resp_user = respElem.value.toLowerCase().replace(/\s/g, '');
 
             atualizaCSS(resp_user, nivel);
         }
     }
-})
+});
 
-function atualizaCSS(texto, nivel){
-    switch (texto){
+function atualizaCSS(texto, nivel) {
+    const campo = document.getElementById(`campo_nivel${nivel}`);
+    
+    switch (texto) {
         case "justify-content:flex-end":
-            document.getElementById(`campo_nivel${nivel}`).style.justifyContent = "flex-end";
+            campo.style.justifyContent = "flex-end";
             break;
         case "justify-content:flex-start":
-            document.getElementById(`campo_nivel${nivel}`).style.justifyContent = "flex-start";
+            campo.style.justifyContent = "flex-start";
             break;
-
         case "justify-content:space-between":
             campo.style.justifyContent = "space-between";
             break;
         case "justify-content:center":
-            document.getElementById(`campo_nivel${nivel}`).style.justifyContent = "center";
+            campo.style.justifyContent = "center";
             break;
         case "justify-content:space-around":
-            document.getElementById(`campo_nivel${nivel}`).style.justifyContent = "space-around";
+            campo.style.justifyContent = "space-around";
             break;
         case "justify-content:space-evenly":
-            document.getElementById(`campo_nivel${nivel}`).style.justifyContent = "space-evenly";
+            campo.style.justifyContent = "space-evenly";
+            break;
+        case "align-items:flex-end":
+            campo.style.alignItems = "flex-end";
+            break;
+        case "align-items:flex-start":
+            campo.style.alignItems = "flex-start";
+            break;
+        case "align-items:center":
+            campo.style.alignItems = "center";
+            break;
+        case "align-items:baseline":
+            campo.style.alignItems = "baseline";
+            break;
+        case "align-items:stretch":
+            campo.style.alignItems = "stretch";
             break;
     }
 }
@@ -149,26 +132,14 @@ function verifica(resposta){
     }
 }
 
-function mudar_instrucao(){
+function mudar_instrucao() {
+    const title_story = document.getElementById(`t_hist${nivel_atual}`);
+    const title_flex = document.getElementById(`t_flex${nivel_atual}`);
+    const story = document.getElementById(`hist${nivel_atual}`);
+    const expla = document.getElementById(`expl${nivel_atual}`);
 
-    var title_story = document.getElementById(`t_hist${nivel_atual}`);
-    var title_flex = document.getElementById(`t_flex${nivel_atual}`);
-
-    var story = document.getElementById(`hist${nivel_atual}`);
-    var expla = document.getElementById(`expl${nivel_atual}`);
-    
-    if(title_story.classList.contains("active")){
-        title_story.classList.remove("active");
-        title_flex.classList.add("active");
-
-        story.classList.add("invisible");
-        expla.classList.remove("invisible");
-    }else{
-        title_story.classList.add("active");
-        title_flex.classList.remove("active");
-
-        story.classList.remove("invisible");
-        expla.classList.add("invisible");
-    }
-    
+    title_story.classList.toggle("active");
+    title_flex.classList.toggle("active");
+    story.classList.toggle("invisible");
+    expla.classList.toggle("invisible");
 }
