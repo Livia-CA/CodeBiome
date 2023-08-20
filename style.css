@@ -799,7 +799,13 @@ code{
 .instrucoes button{
   position: absolute;
   bottom: 3rem;
-  right: 3rem;
+  right: 5rem;
+}
+
+.instrucoes .explicacao button{
+  position: absolute;
+  bottom: 3rem;
+  left: 5rem;
 }
 
 .instrucoes button{
@@ -825,8 +831,143 @@ code{
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: flex-end;
+}
+
+.instrucoes .explicacao .prop{
+  width: 50%;
+}
+
+.instrucoes .explicacao .prop p{
+  color: #646161;
+  font-size: 1.8rem;
+  margin-right: 3rem;
+}
+
+.instrucoes .explicacao .values{
+  display: flex;
+  flex-direction: column;
+  max-height: 30rem;
+  overflow: auto;
+  margin-left: 2rem;
+  padding: 0 1rem;
+}
+
+.instrucoes .explicacao .values::-webkit-scrollbar {
+  width: 5px;
+}
+
+.instrucoes .explicacao .values::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.instrucoes .explicacao .values::-webkit-scrollbar-thumb {
+  background-color: #9A290C;
+  border-radius: .5rem;
+}
+
+#jogo .instrucoes .explicacao h3{
+  color: #000;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.instrucoes .explicacao h4{
+  color: #000;
+  margin-bottom: .5rem;
+  margin-top: 1rem;
+}
+
+.instrucoes .explicacao .flex{
+  display: flex;
+  border: solid 0.3rem #9A290C;
+  width: 40rem;
+  padding: 0.5rem;
+  gap: .5rem;
+  border-radius: .5rem;
+}
+
+#expl2 .instrucoes .explicacao .flex{
+  display: flex;
+  border: solid 0.3rem #9A290C;
+  width: 40rem;
+  height: 10rem;
+  padding: 0.5rem;
+  gap: .5rem;
+  border-radius: .5rem;
+}
+
+.jc_flex-end{
   justify-content: flex-end;
+}
+
+.jc_center{
+  justify-content: center;
+}
+
+.jc_space-between{
+  justify-content: space-between;
+}
+
+.jc_space-around{
+  justify-content: space-around;
+}
+
+.jc_space-evenly{
+  justify-content: space-evenly;
+}
+
+.ai_stretch{
+  align-items: stretch;
+}
+
+.ai_flex-start{
+  align-items: flex-start;
+}
+
+.ai_flex-end{
+  align-items: flex-end;
+}
+
+.ai_center{
+  align-items: center;
+}
+
+.ai_baseline{
+  align-items: baseline;
+}
+
+.fd_row{
+  flex-direction: row;
+}
+
+.fd_row-reverse{
+  flex-direction: row-reverse;
+}
+
+.fd_column{
+  flex-direction: column;
+}
+
+.fd_column-reverse{
+  flex-direction: column-reverse;
+}
+
+.instrucoes .explicacao .flex div{
+  width: 6rem;
+  height: 6rem;
+  border: .2rem dashed #9A290C;
+  border-radius: .5rem;
+}
+
+.instrucoes .explicacao img.ai_{
+  filter: none;
+  width: 70%;
+}
+
+.instrucoes .explicacao .flex img{
+  width: 100%;
+  height: 100%;
+  filter: none;
 }
 
 /*sucess*/
