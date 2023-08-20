@@ -56,19 +56,57 @@ function mudarnivel(element) {
     nivel_atual += element.classList.contains("level_ant") ? -1 : 1;
     open_modal(`nivel${nivel_atual}`);
     atualiza_mudar_nivel();
+    getText();
 }
 
 function proxnivel(){
-    close_modal(`nivel${nivel_atual}`);
-    nivel_atual++;
-    open_modal(`nivel${nivel_atual}`)
-    atualiza_mudar_nivel();
-    close_modal('sucess');
+    if(nivel_atual == 4){
+        close_modal('jogo');
+        close_page('pre_pantanal');
+    }else{
+        close_modal(`nivel${nivel_atual}`);
+        nivel_atual++;
+        open_modal(`nivel${nivel_atual}`)
+        atualiza_mudar_nivel();
+        close_modal('sucess');
+    }
+}
+
+function tentar_nov(id){
+    close_modal(id);
+    document.getElementById(`resp_nivel${nivel_atual}`).value = '';
+
+    posicaoInitial();
+}
+
+function posicaoInitial(){
+    const campo = document.getElementById(`campo_nivel${nivel_atual}`);
+
+    campo.style.justifyContent = "initial";
+    campo.style.alignItems = "initial";
+    campo.style.flexDirection = "initial";
+
+    switch(nivel_atual){
+        case 1:
+            campo.style.justifyContent = "flex-end";
+            break;
+        case 2:
+            campo.style.alignItems = "flex-end";
+            break;
+    }
 }
 
 let resp_user;
 
-document.addEventListener("keydown", (event) => {
+function getText(){
+    let respElem = document.getElementById(`resp_nivel${nivel_atual}`);
+    resp_user = respElem.value.toLowerCase().replace(/\s/g, '');
+
+    atualizaCSS(resp_user, nivel_atual);
+}
+
+
+/*document.addEventListenerresp_nivel2("keydown", (event) => {
     if (document.getElementById('jogo').className === "visible") {
         if (event.key === ";") {
             const nivel = nivel_atual;
@@ -79,56 +117,81 @@ document.addEventListener("keydown", (event) => {
             atualizaCSS(resp_user, nivel);
         }
     }
-});
+});*/
 
 function atualizaCSS(texto, nivel) {
     const campo = document.getElementById(`campo_nivel${nivel}`);
     
     switch (texto) {
-        case "justify-content:flex-end":
+        case "justify-content:flex-end;":
             campo.style.justifyContent = "flex-end";
             break;
-        case "justify-content:flex-start":
+        case "justify-content:flex-start;":
             campo.style.justifyContent = "flex-start";
             break;
-        case "justify-content:space-between":
+        case "justify-content:space-between;":
             campo.style.justifyContent = "space-between";
             break;
-        case "justify-content:center":
+        case "justify-content:center;":
             campo.style.justifyContent = "center";
             break;
-        case "justify-content:space-around":
+        case "justify-content:space-around;":
             campo.style.justifyContent = "space-around";
             break;
-        case "justify-content:space-evenly":
+        case "justify-content:space-evenly;":
             campo.style.justifyContent = "space-evenly";
             break;
-        case "align-items:flex-end":
+        case "align-items:flex-end;":
             campo.style.alignItems = "flex-end";
             break;
-        case "align-items:flex-start":
+        case "align-items:flex-start;":
             campo.style.alignItems = "flex-start";
             break;
-        case "align-items:center":
+        case "align-items:center;":
             campo.style.alignItems = "center";
             break;
-        case "align-items:baseline":
+        case "align-items:baseline;":
             campo.style.alignItems = "baseline";
             break;
-        case "align-items:stretch":
+        case "align-items:stretch;":
             campo.style.alignItems = "stretch";
+            break;
+        case "flex-direction:row;":
+            campo.style.flexDirection = "row";
+            break;
+        case "flex-direction:row-reverse;":
+            campo.style.flexDirection = "row-reverse";
+            break;
+        case "flex-direction:column;":
+            campo.style.flexDirection = "column";
+            break;
+        case "flex-direction:column-reverse;":
+            campo.style.flexDirection = "column-reverse";
+            break;
+        default:
+            posicaoInitial();
             break;
     }
 }
 
 function verifica(resposta){
     if(resposta == resp_user){
-        document.getElementById("titulo_sucess").textContent = `Parabéns você concluiu o nível ${nivel_atual}!!`;
+        if(nivel_atual == 4){
+            document.getElementById("titulo_sucess").textContent = "Parabéns, você encerrou sua jornada no Pantanal! Todos animais estão salvos! :)";
+
+            document.getElementById("botao_sucess").textContent = "próxima fase";
+        }else{
+            document.getElementById("titulo_sucess").textContent = `Parabéns você concluiu o nível ${nivel_atual}!!`;
+        }
         open_modal('sucess');
         if(nivel_atual == nivel_desbloc){
             nivel_desbloc++;
             atualiza_mudar_nivel();
         }
+        
+    }else{
+        document.getElementById("titulo_fail").textContent = "Oh, não! parece que isso não funcionou... Tente novamente!" ;
+        open_modal('fail');
     }
 }
 

@@ -464,13 +464,14 @@ code{
 }
 
 #jogo .col-b .campo .fixo{
+  display: flex;
   position: fixed;
   height: 50rem;
   width: 50rem;
 }
 
 #jogo .col-b .campo .fixo img{
-  width: 15rem;
+  height: 15rem;
   margin: 2rem;
   filter: drop-shadow(-5px 5px 5px #222);
 }
@@ -489,6 +490,30 @@ code{
   filter: drop-shadow(-5px 5px 5px #222);
 }
 
+#jogo #nivel4 .col-b .campo .movel img{
+  height: 12.5rem;
+  width: 12.5rem;
+}
+
+#jogo #nivel4 .col-b .campo .fixo{
+  flex-direction: column-reverse;
+  justify-content: space-around;
+}
+
+#jogo #nivel4 .col-b .campo .fixo img{
+  width: 7rem;
+  max-height: 7rem;
+  margin: 3rem;
+}
+
+#jogo #nivel3 .fixo{
+  justify-content: flex-end;
+}
+
+#jogo #nivel3 .fixo{
+  justify-content: flex-end;
+}
+
 #campo_nivel1{
   justify-content: flex-end;
 }
@@ -496,6 +521,7 @@ code{
 #campo_nivel2{
   align-items: flex-end;
 }
+
 
 
 /*///////////////sobre*/
@@ -804,7 +830,7 @@ code{
 }
 
 /*sucess*/
-#sucess .cont{
+#sucess .cont, #fail .cont{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -818,7 +844,7 @@ code{
   animation: fade-in .5s;
 }
 
-#sucess .content{
+#sucess .content, #fail .content{
   background-color: #FFFCF8;
   padding: 5rem;
   border-radius: 0.5rem;
@@ -831,7 +857,7 @@ code{
   justify-content: space-between;
 }
 
-#sucess .content h3{
+#sucess .content h3, #fail .content h3{
   font-family: nunito;
   color: #000;
   font-size: 2.4rem;
@@ -839,12 +865,12 @@ code{
   font-weight: 600;
 }
 
-#sucess .content button{
+#sucess .content button, #fail .content button{
   margin: 0;
   width: 20rem;
 }
 
-#sucess .content a{
+#sucess .content a, #fail .content a{
   position: absolute;
   top: 4rem;
   right: 4rem;
@@ -860,7 +886,7 @@ code{
 }
 
 @media (max-width: 1200px){
-  body{
+  #telas_jogo{
     display: none;
   }
 }
