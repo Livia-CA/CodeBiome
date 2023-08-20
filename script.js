@@ -1,3 +1,6 @@
+var audio = document.querySelector("audio"); 
+audio.play();
+
 element = document.getElementById("start_now");
 
 element.addEventListener("mouseover", () => {
