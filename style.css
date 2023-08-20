@@ -876,6 +876,23 @@ code{
   right: 4rem;
 }
 
+#tela_incompativel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+#tela_incompativel p{
+  color:#000;
+  text-align: center;
+}
+
+#tela_incompativel img{
+  height: 20rem;
+}
+
 @keyframes fade-in{
   from{
     opacity: 0;
